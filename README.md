@@ -10,6 +10,10 @@ Follow these quick steps after you've cloned this project to get it running.
 3. Edit the ```databaseHelpers/mysqlWrapper.js``` file add your specific database server's credentials.
 4. Run ```node index.js``` to start the server.
 
+# Testing
+
+Import the ```simple-oauth2.postman_collection.json``` [Postman](http://getpostman.com/) collection to test this project.
+
 # Acknowledgements
 
 This project is based on Micah Simmons' [How to make an OAuth 2 server with Node.js](https://blog.cloudboost.io/how-to-make-an-oauth-2-server-with-node-js-a6db02dc2ce7)

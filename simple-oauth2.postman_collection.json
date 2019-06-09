@@ -1,0 +1,368 @@
+{
+	"info": {
+		"_postman_id": "a940bce6-8c5f-4878-a369-b19e6e932ed9",
+		"name": "simple-oauth2",
+		"description": "Checkout https://github.com/gerarddejong/simple-oauth2 for more information.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "null",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "null",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{host}}/auth/registerUser",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"auth",
+						"registerUser"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Node OAuth2 Server",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://{{host}}/auth/login?username=test&password=test&grant_type=password&client_id=null&client_secret=null",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "test"
+								},
+								{
+									"key": "password",
+									"value": "test"
+								},
+								{
+									"key": "grant_type",
+									"value": "password"
+								},
+								{
+									"key": "client_id",
+									"value": "null"
+								},
+								{
+									"key": "client_secret",
+									"value": "null"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'none'"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1480"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Jun 2019 16:35:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <title>Error</title>\n    </head>\n    <body>\n        <pre>OAuth2Error: Invalid or missing grant_type parameter\n            <br> &nbsp; &nbsp;at OAuth2Error (/Users/gerard/Projects/nodeJS_OAuth2Example/node_modules/node-oauth2-server/lib/error.js:30:12)\n            <br> &nbsp; &nbsp;at Grant.extractCredentials (/Users/gerard/Projects/nodeJS_OAuth2Example/node_modules/node-oauth2-server/lib/grant.js:77:17)\n            <br> &nbsp; &nbsp;at run (/Users/gerard/Projects/nodeJS_OAuth2Example/node_modules/node-oauth2-server/lib/runner.js:15:14)\n            <br> &nbsp; &nbsp;at runner (/Users/gerard/Projects/nodeJS_OAuth2Example/node_modules/node-oauth2-server/lib/runner.js:19:5)\n            <br> &nbsp; &nbsp;at new Grant (/Users/gerard/Projects/nodeJS_OAuth2Example/node_modules/node-oauth2-server/lib/grant.js:57:3)\n            <br> &nbsp; &nbsp;at /Users/gerard/Projects/nodeJS_OAuth2Example/node_modules/node-oauth2-server/lib/oauth2server.js:88:5\n            <br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/Users/gerard/Projects/nodeJS_OAuth2Example/node_modules/express/lib/router/layer.js:95:5)\n            <br> &nbsp; &nbsp;at next (/Users/gerard/Projects/nodeJS_OAuth2Example/node_modules/express/lib/router/route.js:137:13)\n            <br> &nbsp; &nbsp;at Route.dispatch (/Users/gerard/Projects/nodeJS_OAuth2Example/node_modules/express/lib/router/route.js:112:3)\n            <br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/Users/gerard/Projects/nodeJS_OAuth2Example/node_modules/express/lib/router/layer.js:95:5)\n        </pre>\n    </body>\n</html>"
+				}
+			]
+		},
+		{
+			"name": "Get Auth Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "null",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "null",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{host}}/auth/login",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Node OAuth2 Server",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://{{host}}/auth/login?username=test&password=test&grant_type=password&client_id=null&client_secret=null",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "test"
+								},
+								{
+									"key": "password",
+									"value": "test"
+								},
+								{
+									"key": "grant_type",
+									"value": "password"
+								},
+								{
+									"key": "client_id",
+									"value": "null"
+								},
+								{
+									"key": "client_secret",
+									"value": "null"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'none'"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1480"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Jun 2019 16:35:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <title>Error</title>\n    </head>\n    <body>\n        <pre>OAuth2Error: Invalid or missing grant_type parameter\n            <br> &nbsp; &nbsp;at OAuth2Error (/Users/gerard/Projects/nodeJS_OAuth2Example/node_modules/node-oauth2-server/lib/error.js:30:12)\n            <br> &nbsp; &nbsp;at Grant.extractCredentials (/Users/gerard/Projects/nodeJS_OAuth2Example/node_modules/node-oauth2-server/lib/grant.js:77:17)\n            <br> &nbsp; &nbsp;at run (/Users/gerard/Projects/nodeJS_OAuth2Example/node_modules/node-oauth2-server/lib/runner.js:15:14)\n            <br> &nbsp; &nbsp;at runner (/Users/gerard/Projects/nodeJS_OAuth2Example/node_modules/node-oauth2-server/lib/runner.js:19:5)\n            <br> &nbsp; &nbsp;at new Grant (/Users/gerard/Projects/nodeJS_OAuth2Example/node_modules/node-oauth2-server/lib/grant.js:57:3)\n            <br> &nbsp; &nbsp;at /Users/gerard/Projects/nodeJS_OAuth2Example/node_modules/node-oauth2-server/lib/oauth2server.js:88:5\n            <br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/Users/gerard/Projects/nodeJS_OAuth2Example/node_modules/express/lib/router/layer.js:95:5)\n            <br> &nbsp; &nbsp;at next (/Users/gerard/Projects/nodeJS_OAuth2Example/node_modules/express/lib/router/route.js:137:13)\n            <br> &nbsp; &nbsp;at Route.dispatch (/Users/gerard/Projects/nodeJS_OAuth2Example/node_modules/express/lib/router/route.js:112:3)\n            <br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/Users/gerard/Projects/nodeJS_OAuth2Example/node_modules/express/lib/router/layer.js:95:5)\n        </pre>\n    </body>\n</html>"
+				}
+			]
+		},
+		{
+			"name": "Test Auth Token",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "16784cae7ba4dba69deb63db93b73d21a2801bf8",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://{{host}}/restrictedArea/enter",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"restrictedArea",
+						"enter"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "4618f494-087a-4e1d-bbf2-bf57613deb87",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f92550f2-ff53-4c2c-9fb8-93c108eb3331",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
